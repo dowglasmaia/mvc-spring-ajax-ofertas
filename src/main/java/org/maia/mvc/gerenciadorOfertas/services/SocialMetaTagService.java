@@ -5,10 +5,14 @@ import java.io.IOException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.maia.mvc.gerenciadorOfertas.domain.SocialMetaTag;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
 public class SocialMetaTagService {
+	
+	private static Logger log = LoggerFactory.getLogger(SocialMetaTagService.class);
 	
 	//recuperando os dados ta meta tag da pagina html com openGraph
 	public SocialMetaTag getOpenGraphByUrl(String url) {
@@ -24,7 +28,8 @@ public class SocialMetaTagService {
 			tag.setUrl(document.head().select("meta[property=og:url]").attr("content") ); //<meta property="og:url" content="https://www.udemy.com/course/dax-e-pbi/">
 								
 		} catch (IOException e) {			
-			e.printStackTrace();
+			//e.printStackTrace();
+			log.error(e.getMessage(), e.getCause());
 		} 		
 		return tag;
 	}
@@ -44,7 +49,8 @@ public class SocialMetaTagService {
 			tag.setUrl(document.head().select("meta[name=twitter:url]").attr("content") ); //<meta property="twitter:url" content="https://www.udemy.com/course/dax-e-pbi/">
 								
 		} catch (IOException e) {			
-			e.printStackTrace();
+			//e.printStackTrace();
+			log.error(e.getMessage(), e.getCause());
 		} 		
 		return tag;
 	}
@@ -63,7 +69,8 @@ public class SocialMetaTagService {
 				tag.setUrl(document.select("meta[itemprop=url]").attr("content") ); 						
 				
 			} catch (IOException e) {			
-				e.printStackTrace();
+				//e.printStackTrace();
+				log.error(e.getMessage(), e.getCause());
 			} 		
 			return tag;
 		}
