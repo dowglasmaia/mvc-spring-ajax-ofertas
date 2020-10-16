@@ -8,7 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MvcSpringAjaxApplication implements CommandLineRunner	{
+public class MvcSpringAjaxApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MvcSpringAjaxApplication.class, args);
@@ -16,13 +16,21 @@ public class MvcSpringAjaxApplication implements CommandLineRunner	{
 
 	@Autowired
 	SocialMetaTagService services;
-	
+
 	@Override
 	public void run(String... args) throws Exception {
-		
+
 		SocialMetaTag metaTag = services.getOpenGraphByUrl("https://www.udemy.com/course/dax-e-pbi/");
-		
+
 		System.out.println(metaTag);
+
+		SocialMetaTag metaTagByTwitter = services.getTwitterCardByUrl("https://www.udemy.com/course/dax-e-pbi/");
+
+		System.out.println(metaTagByTwitter);
+
+		SocialMetaTag metaTagItemprop = services.getItempropByUrl("https://www.udemy.com/course/dax-e-pbi/");
+
+		System.out.println(metaTagItemprop);
 	}
 
 }

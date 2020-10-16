@@ -14,8 +14,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SocialMetaTag implements Serializable {
 
-	private String siteString;
-	private String titleString;
+	private String site;
+	private String title;
+	private String descricao;
 	private String url;
 	private String image;
 
