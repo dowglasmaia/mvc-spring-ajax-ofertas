@@ -15,7 +15,7 @@ public class SocialMetaTagService {
 	private static Logger log = LoggerFactory.getLogger(SocialMetaTagService.class);
 	
 	//recuperando os dados ta meta tag da pagina html com openGraph
-	public SocialMetaTag getOpenGraphByUrl(String url) {
+	private SocialMetaTag getOpenGraphByUrl(String url) {
 		
 		SocialMetaTag tag = new SocialMetaTag();
 		
@@ -36,7 +36,7 @@ public class SocialMetaTagService {
 	
 	
 	//recuperando os dados ta meta tag da pagina html com TwitterCard
-	public SocialMetaTag getTwitterCardByUrl(String url) {
+	private SocialMetaTag getTwitterCardByUrl(String url) {
 		
 		SocialMetaTag tag = new SocialMetaTag();
 		
@@ -56,7 +56,7 @@ public class SocialMetaTagService {
 	}
 	
 	//recuperando os dados ta meta tag da pagina html com itemprop
-		public SocialMetaTag getItempropByUrl(String url) {
+	private SocialMetaTag getItempropByUrl(String url) {
 			
 			SocialMetaTag tag = new SocialMetaTag();
 			
@@ -73,6 +73,32 @@ public class SocialMetaTagService {
 				log.error(e.getMessage(), e.getCause());
 			} 		
 			return tag;
+		}
+		
+		private boolean isEmpty(SocialMetaTag tag) {			
+			 if (tag.getImage().isEmpty() ) return true;
+			 if (tag.getTitle().isEmpty() ) return true;
+			 if (tag.getUrl().isEmpty() ) return true;
+			 if (tag.getSite().isEmpty() ) return true;			
+			return false;
+		}
+		
+		public SocialMetaTag getSocialMetaTag(String url) {					
+			SocialMetaTag tagsTwitter  = getTwitterCardByUrl(url);			
+			if(!isEmpty(tagsTwitter)) {
+				return tagsTwitter;
+			}
+			
+			SocialMetaTag tagsOpenGraph  = getOpenGraphByUrl(url);			
+			if(!isEmpty(tagsOpenGraph)) {
+				return tagsOpenGraph;
+			}	
+			
+			SocialMetaTag tagsItemprop  = getItempropByUrl(url);			
+			if(!isEmpty(tagsItemprop)) {
+				return tagsItemprop;
+			}
+		 return null;
 		}
 	
 

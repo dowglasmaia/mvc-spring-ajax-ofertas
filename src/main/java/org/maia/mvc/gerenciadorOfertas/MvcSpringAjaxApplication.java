@@ -20,17 +20,19 @@ public class MvcSpringAjaxApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		SocialMetaTag metaTag = services.getOpenGraphByUrl("https://www.udemy.com/course/dax-e-pbi/");
+		SocialMetaTag metaTag = services.getSocialMetaTag("https://www.udemy.com/course/dax-e-pbi/");
 
 		System.out.println(metaTag);
-
-		SocialMetaTag metaTagByTwitter = services.getTwitterCardByUrl("https://www.udemy.com/course/dax-e-pbi/");
+		
+		/*
+		SocialMetaTag metaTagByTwitter = services.getSocialMetaTag("https://www.udemy.com/course/dax-e-pbi/");
 
 		System.out.println(metaTagByTwitter);
 
-		SocialMetaTag metaTagItemprop = services.getItempropByUrl("https://www.udemy.com/course/dax-e-pbi/");
+		SocialMetaTag metaTagItemprop = services.getSocialMetaTag("https://www.udemy.com/course/dax-e-pbi/");
 
-		System.out.println(metaTagItemprop);
+		System.out.println(metaTagItemprop);*/
+		
 	}
 
 }

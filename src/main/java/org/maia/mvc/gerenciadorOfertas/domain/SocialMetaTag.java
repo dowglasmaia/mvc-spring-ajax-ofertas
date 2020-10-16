@@ -19,5 +19,6 @@ public class SocialMetaTag implements Serializable {
 	private String descricao;
 	private String url;
 	private String image;
+	
 
 }
