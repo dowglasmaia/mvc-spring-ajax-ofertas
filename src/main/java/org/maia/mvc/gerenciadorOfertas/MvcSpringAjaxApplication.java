@@ -20,9 +20,9 @@ public class MvcSpringAjaxApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		SocialMetaTag metaTag = services.getSocialMetaTag("https://www.udemy.com/course/dax-e-pbi/");
+		//SocialMetaTag metaTag = services.getSocialMetaTag("https://www.udemy.com/course/dax-e-pbi/");
 
-		System.out.println(metaTag);
+		//System.out.println(metaTag);
 		
 		/*
 		SocialMetaTag metaTagByTwitter = services.getSocialMetaTag("https://www.udemy.com/course/dax-e-pbi/");
@@ -31,7 +31,7 @@ public class MvcSpringAjaxApplication implements CommandLineRunner {
 
 		SocialMetaTag metaTagItemprop = services.getSocialMetaTag("https://www.udemy.com/course/dax-e-pbi/");
 
-		System.out.println(metaTagItemprop);*/
+		System.out.println(metaTagItemprop);*/ 
 		
 	}
 

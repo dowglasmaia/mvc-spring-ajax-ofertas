@@ -66,7 +66,9 @@ public class SocialMetaTagService {
 				tag.setTitle(document.select("meta[itemprop=name]").attr("content") ); //<meta itemprop="name" content="Power BI &amp; DAX Avançado - Guia Completo para Análises Reais">
 				tag.setDescricao(document.select("meta[itemprop=description]").attr("content") ); 
 				tag.setImage(document.select("meta[itemprop=image]").attr("content") ); 
-				tag.setUrl(document.select("meta[itemprop=url]").attr("content") ); 						
+				tag.setUrl(document.select("meta[itemprop=url]").attr("content") ); 
+				
+		
 				
 			} catch (IOException e) {			
 				//e.printStackTrace();
