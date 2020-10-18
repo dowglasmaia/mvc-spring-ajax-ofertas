@@ -21,6 +21,9 @@ public class SocialmetatagController {
 	public ResponseEntity<SocialMetaTag> obterDadosViaUrl(@RequestParam ("url") String url){
 		
 		SocialMetaTag obj = tagService.getSocialMetaTag(url);
+		
+		System.out.println(obj);
+		
 		return obj != null
 				? ResponseEntity.ok(obj)
 				: ResponseEntity.notFound().build();
