@@ -14,8 +14,17 @@ $("#linkPromocao").on('change', function () {
 			  $("#titulo").val(data.title);
 			  $("#site").text(data.site.replace("@",""));
 			  $("#linkImagem").attr("src",data.image);			  
+		  },
+		  statusCode: {
+			  /*criando messagem de resposta de Error*/
+			  404: function(){
+				  $("#alert").addClass("alert alert-danger").text(
+						  "Nenhuma informação pode ser recuperada dessa url!");
+			  }
 		  }
 	  })
   }
+  
+  
   
 })
