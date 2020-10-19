@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -63,6 +65,10 @@ public class Promocao implements Serializable {
 
 	@Column(name = "data_cadastro")
 	private LocalDateTime dtaCadastroDateTime;
+	
+	@ManyToOne
+	@JoinColumn(name = "categoria_fk")
+	private Categoria categoria;
 
 	public Promocao() {
 		this.dtaCadastroDateTime = LocalDateTime.now();
