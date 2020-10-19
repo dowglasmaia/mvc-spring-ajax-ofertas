@@ -18,9 +18,21 @@ $("#linkPromocao").on('change', function () {
 		  statusCode: {
 			  /*criando messagem de resposta de Error*/
 			  404: function(){
-				  $("#alert").addClass("alert alert-danger").text(
-						  "Nenhuma informação pode ser recuperada dessa url!");
-			  }
+				  $("#alert")
+				  .addClass("alert alert-danger")
+				  .text( "Nenhuma informação pode ser recuperada dessa url!");
+			  },
+			  500: function(){
+				  $("#alert")
+				  .addClass("alert alert-danger")
+				  .text( "Url inválida");
+			  }	
+		  },
+		  /*Erros genericos*/
+		  error: function(){
+			  $("#alert")
+			  .addClass("alert alert-danger")
+			  .text( "Ops... algo deu errado, tente novamente mas tarde");
 		  }
 	  })
   }
