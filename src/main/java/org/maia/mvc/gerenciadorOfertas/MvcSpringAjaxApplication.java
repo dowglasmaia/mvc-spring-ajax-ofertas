@@ -1,7 +1,6 @@
 package org.maia.mvc.gerenciadorOfertas;
 
-import org.maia.mvc.gerenciadorOfertas.domain.SocialMetaTag;
-import org.maia.mvc.gerenciadorOfertas.services.SocialMetaTagService;
+import org.maia.mvc.gerenciadorOfertas.services.SocialMetaTagServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,7 +14,7 @@ public class MvcSpringAjaxApplication implements CommandLineRunner {
 	}
 
 	@Autowired
-	SocialMetaTagService services;
+	SocialMetaTagServices services;
 
 	@Override
 	public void run(String... args) throws Exception {

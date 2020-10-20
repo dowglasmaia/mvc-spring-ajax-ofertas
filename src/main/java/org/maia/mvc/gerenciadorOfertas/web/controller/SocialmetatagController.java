@@ -1,7 +1,7 @@
 package org.maia.mvc.gerenciadorOfertas.web.controller;
 
 import org.maia.mvc.gerenciadorOfertas.domain.SocialMetaTag;
-import org.maia.mvc.gerenciadorOfertas.services.SocialMetaTagService;
+import org.maia.mvc.gerenciadorOfertas.services.SocialMetaTagServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -15,7 +15,7 @@ public class SocialmetatagController {
 
 	
 	@Autowired
-	private SocialMetaTagService tagService;
+	private SocialMetaTagServices tagService;
 	
 	@PostMapping("/info")
 	public ResponseEntity<SocialMetaTag> obterDadosViaUrl(@RequestParam ("url") String url){
