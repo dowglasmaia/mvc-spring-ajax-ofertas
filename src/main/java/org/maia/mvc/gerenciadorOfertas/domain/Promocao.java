@@ -18,16 +18,14 @@ import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
 
-import groovy.transform.builder.Builder;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
+import lombok.*;
 
 @SuppressWarnings("serial")
 @Data
 @Builder
 @AllArgsConstructor
-//@NoArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "promocoes")
 public class Promocao implements Serializable {
@@ -60,8 +58,8 @@ public class Promocao implements Serializable {
 	@Column(name = "link_imagem", nullable = false)
 	private String linkImage;
 
-	@Column(name = "total_links")
-	private String likes;
+	@Column(name = "total_likes")
+	private int likes;
 
 	@Column(name = "data_cadastro")
 	private LocalDateTime dtaCadastroDateTime;
@@ -70,8 +68,5 @@ public class Promocao implements Serializable {
 	@JoinColumn(name = "categoria_fk")
 	private Categoria categoria;
 
-	public Promocao() {
-		this.dtaCadastroDateTime = LocalDateTime.now();
-	}
-
+	
 }

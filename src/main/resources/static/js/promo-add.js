@@ -51,7 +51,47 @@ $("#linkPromocao").on('change', function () {
 		 },
 	  })
   }
-  
-  
-  
-})
+    
+});
+
+//submmit do formulario para o cotroller
+$("#form-add-promo").submit(function(evt){
+	evt.preventDefault();
+	
+	var promo = {};	
+	promo.linkPromocao = $("#linkPromocao").val();
+	promo.descricao = $("#descricao").val();
+	promo.preco = $("#preco").val();
+	promo.site = $("#site").text();
+	promo.title = $("#titulo").val(); 
+	promo.linkImage = $("#linkImagem").attr("src");  
+	promo.categoria = $("#categoria").val(); 
+	
+	console.log('promo > ', promo);
+	
+	/*requisição para salvar a promoção via ajax*/
+	$.ajax({
+		method: "POST",
+		url: "/promocao/save",
+		data:promo,
+			beforeSend: function(){
+			  $("#alert").removeClass("alert alert-danger").text(" ");//removendo msg de error
+			  $("#alert").removeClass("alert alert-success").text(" ");//removendo msg de error
+			},
+			success: function(){
+				$("#alert").addClass("alert alert-success").text("OK! Promoção cadastrada com sucesso.");
+			},
+			error: function(xhr){
+				console.log("> error: ", xhr.responseText);
+				$("#alert").addClass("alert alert-danger").text("Não foi possível salvar esta promoção.");
+			}
+	});
+	
+});
+
+
+
+
+
+
+

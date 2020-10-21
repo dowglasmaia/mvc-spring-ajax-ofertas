@@ -13,10 +13,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
-import groovy.transform.builder.Builder;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.*;
 
 @SuppressWarnings("serial")
 @Data
@@ -35,6 +34,7 @@ public class Categoria implements Serializable {
 	@Column(name = "titulo", nullable = false, unique = true)
 	private String titulo;
 
+	@JsonIgnore
 	@OneToMany(mappedBy = "categoria")
 	private Set<Promocao> promocoes = new HashSet<>();
 

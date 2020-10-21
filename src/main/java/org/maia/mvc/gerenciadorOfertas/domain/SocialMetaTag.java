@@ -2,10 +2,8 @@ package org.maia.mvc.gerenciadorOfertas.domain;
 
 import java.io.Serializable;
 
-import groovy.transform.builder.Builder;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
+import lombok.*;
 
 @SuppressWarnings("serial")
 @Data
