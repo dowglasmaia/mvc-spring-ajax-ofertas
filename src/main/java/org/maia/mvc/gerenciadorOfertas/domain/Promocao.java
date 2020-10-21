@@ -29,7 +29,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 //@NoArgsConstructor
 @Entity
-@Table
+@Table(name = "promocoes")
 public class Promocao implements Serializable {
 
 	@Id
