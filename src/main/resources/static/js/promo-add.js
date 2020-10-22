@@ -78,6 +78,7 @@ $("#form-add-promo").submit(function (evt) {
 			/*escodendo o formulario e add class de load*/
 			$("#form-add-promo").hide();
 			$("#loader-form").addClass("loader").show();
+			$("#alert").removeClass("alert alert-danger alert-success").text(" ");//removendo msg de error
 		},
 		success: function () {
 			/*limpando todos os campos de entrada do formulario497*/
