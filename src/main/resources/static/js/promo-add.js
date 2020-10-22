@@ -11,7 +11,7 @@ $("#linkPromocao").on('change', function () {
 		  cache: false,
 		  //antes  de qualquer requisição
 		  beforeSend: function(){
-			  $("#alert").removeClass("alert alert-danger").text(" ");//removendo msg de error
+			  $("#alert").removeClass("alert alert-danger alert-success").text(" ");//removendo msg de error
 			  $("#titulo").val(""); // limpa o campo de titulo
 			  $("#site").text(""); // limpa o campo  onde estar o nome do dite
 			  $("#linkImagem").attr("src"," "); // limpa o campo onde estar o nome da imagem
@@ -74,11 +74,18 @@ $("#form-add-promo").submit(function(evt){
 		method: "POST",
 		url: "/promocao/save",
 		data:promo,
-			beforeSend: function(){
+			/*beforeSend: function(){
 			  $("#alert").removeClass("alert alert-danger").text(" ");//removendo msg de error
 			  $("#alert").removeClass("alert alert-success").text(" ");//removendo msg de error
-			},
+			},*/
 			success: function(){
+				/*limpando todos os campos de entrada do formulario497*/
+				$("#form-add-promo").each(function(){
+					this.reset();
+				});
+				$("#linkImagem").attr("src","/images/promo-dark.png ");
+				$("#titulo").val(""); 
+				
 				$("#alert").addClass("alert alert-success").text("OK! Promoção cadastrada com sucesso.");
 			},
 			error: function(xhr){
@@ -88,10 +95,3 @@ $("#form-add-promo").submit(function(evt){
 	});
 	
 });
-
-
-
-
-
-
-
