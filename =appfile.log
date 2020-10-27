@@ -2721,3 +2721,136 @@ java.lang.IllegalArgumentException: The given id must not be null!
 2020-10-21 18:03:26.544  INFO 16492 --- [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2020-10-21 18:03:26.547  INFO 16492 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2020-10-21 18:03:26.555  INFO 16492 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-10-22 15:59:28.295  INFO 15084 --- [restartedMain] o.m.m.g.MvcSpringAjaxApplication         : Starting MvcSpringAjaxApplication on DESKTOP-DCD5LMF with PID 15084 (E:\dev_maia\workspace_java\mvc-spring-ajax-ofertas\target\classes started by dowgl in E:\dev_maia\workspace_java\mvc-spring-ajax-ofertas)
+2020-10-22 15:59:28.297  INFO 15084 --- [restartedMain] o.m.m.g.MvcSpringAjaxApplication         : The following profiles are active: dev
+2020-10-22 15:59:28.470  INFO 15084 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-22 15:59:28.470  INFO 15084 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-22 15:59:29.063  INFO 15084 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-10-22 15:59:29.119  INFO 15084 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50ms. Found 2 JPA repository interfaces.
+2020-10-22 15:59:29.653  INFO 15084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2020-10-22 15:59:29.681  INFO 15084 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-22 15:59:29.681  INFO 15084 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-22 15:59:29.782  INFO 15084 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-22 15:59:29.783  INFO 15084 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1313 ms
+2020-10-22 15:59:29.922  INFO 15084 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-22 15:59:30.211  INFO 15084 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-22 15:59:30.249  INFO 15084 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-10-22 15:59:30.290  INFO 15084 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.18.Final}
+2020-10-22 15:59:30.292  INFO 15084 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-10-22 15:59:30.389  INFO 15084 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-10-22 15:59:30.505  INFO 15084 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-10-22 15:59:30.980  INFO 15084 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-22 15:59:31.384  INFO 15084 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-22 15:59:31.796  INFO 15084 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-22 15:59:31.857  INFO 15084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2020-10-22 15:59:31.860  INFO 15084 --- [restartedMain] o.m.m.g.MvcSpringAjaxApplication         : Started MvcSpringAjaxApplication in 3.808 seconds (JVM running for 4.454)
+2020-10-22 15:59:39.050  INFO 15084 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-22 15:59:39.050  INFO 15084 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-22 15:59:39.058  INFO 15084 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-10-22 15:59:39.108  INFO 15084 --- [http-nio-8085-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2020-10-22 15:59:52.047  INFO 15084 --- [http-nio-8085-exec-6] o.m.m.g.s.impl.SocialMetaTagServiceImpl  : Iniciando getTwitterCardByUrl para a url >https://www.kabum.com.br/cgi-local/site/produtos/descricao_ofertas.cgi?codigo=110549
+2020-10-22 15:59:53.041  INFO 15084 --- [http-nio-8085-exec-6] o.m.m.g.s.impl.SocialMetaTagServiceImpl  : tag >SocialMetaTag(site=@kabumcombr, title=Memória XPG Spectrix D80, RGB, 8GB, 3000MHz, DDR4, CL16 - AX4U300038G16A-SB80, descricao=null, url=, image=https://images9.kabum.com.br/produtos/fotos/110549/memoria-xpg-spectrix-d80-rgb-8gb-3000mhz-ddr4-cl16-ax4u300038g16a-sb80_1585688303_g.jpg)
+2020-10-22 15:59:56.981  INFO 15084 --- [http-nio-8085-exec-7] o.m.m.g.w.controller.PromocaoController  : Salvando a promocao: Promocao NewPromocaoDTO(site=kabumcombr, title=Memória XPG Spectrix D80, RGB, 8GB, 3000MHz, DDR4, CL16 - AX4U300038G16A-SB80, linkPromocao=https://www.kabum.com.br/cgi-local/site/produtos/descricao_ofertas.cgi?codigo=110549, descricao=, linkImage=https://images9.kabum.com.br/produtos/fotos/110549/memoria-xpg-spectrix-d80-rgb-8gb-3000mhz-ddr4-cl16-ax4u300038g16a-sb80_1585688303_g.jpg, categoria=null, preco=46.54)
+2020-10-22 15:59:57.010 ERROR 15084 --- [http-nio-8085-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!] with root cause
+
+java.lang.IllegalArgumentException: The given id must not be null!
+	at org.springframework.util.Assert.notNull(Assert.java:198) ~[spring-core-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findById(SimpleJpaRepository.java:262) ~[spring-data-jpa-2.1.20.RELEASE.jar:2.1.20.RELEASE]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:359) ~[spring-data-commons-2.1.20.RELEASE.jar:2.1.20.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:200) ~[spring-data-commons-2.1.20.RELEASE.jar:2.1.20.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:644) ~[spring-data-commons-2.1.20.RELEASE.jar:2.1.20.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:608) ~[spring-data-commons-2.1.20.RELEASE.jar:2.1.20.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.lambda$invoke$3(RepositoryFactorySupport.java:595) ~[spring-data-commons-2.1.20.RELEASE.jar:2.1.20.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:595) ~[spring-data-commons-2.1.20.RELEASE.jar:2.1.20.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:59) ~[spring-data-commons-2.1.20.RELEASE.jar:2.1.20.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:295) ~[spring-tx-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98) ~[spring-tx-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:144) ~[spring-data-jpa-2.1.20.RELEASE.jar:2.1.20.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$ExposeRepositoryInvocationInterceptor.invoke(CrudMethodMetadataPostProcessor.java:364) ~[spring-data-jpa-2.1.20.RELEASE.jar:2.1.20.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93) ~[spring-aop-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61) ~[spring-data-commons-2.1.20.RELEASE.jar:2.1.20.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at com.sun.proxy.$Proxy96.findById(Unknown Source) ~[na:na]
+	at org.maia.mvc.gerenciadorOfertas.services.impl.CategoriaServicesImpl.findById(CategoriaServicesImpl.java:27) ~[classes/:na]
+	at org.maia.mvc.gerenciadorOfertas.services.impl.PromocaoServicesImpl.fromDTO(PromocaoServicesImpl.java:44) ~[classes/:na]
+	at org.maia.mvc.gerenciadorOfertas.web.controller.PromocaoController.salvarPromocao(PromocaoController.java:47) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892) ~[spring-webmvc-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.38.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.38.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94) ~[spring-web-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.1.18.RELEASE.jar:5.1.18.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+
+2020-10-22 16:00:03.827  INFO 15084 --- [http-nio-8085-exec-8] o.m.m.g.w.controller.PromocaoController  : Salvando a promocao: Promocao NewPromocaoDTO(site=kabumcombr, title=Memória XPG Spectrix D80, RGB, 8GB, 3000MHz, DDR4, CL16 - AX4U300038G16A-SB80, linkPromocao=https://www.kabum.com.br/cgi-local/site/produtos/descricao_ofertas.cgi?codigo=110549, descricao=, linkImage=https://images9.kabum.com.br/produtos/fotos/110549/memoria-xpg-spectrix-d80-rgb-8gb-3000mhz-ddr4-cl16-ax4u300038g16a-sb80_1585688303_g.jpg, categoria=1, preco=46.54)
+2020-10-22 16:07:24.769  INFO 15084 --- [http-nio-8085-exec-3] o.m.m.g.s.impl.SocialMetaTagServiceImpl  : Iniciando getTwitterCardByUrl para a url >https://www.kabum.com.br/cgi-local/site/produtos/descricao_ofertas.cgi?codigo=102746
+2020-10-22 16:07:26.721  INFO 15084 --- [http-nio-8085-exec-3] o.m.m.g.s.impl.SocialMetaTagServiceImpl  : tag >SocialMetaTag(site=@kabumcombr, title=Memória XPG Spectrix D41 TUF, RGB, 8GB, 3000MHz, DDR4, CL16 - AX4U300038G16-SB41, descricao=null, url=, image=https://images6.kabum.com.br/produtos/fotos/102746/memoria-adata-xpg-spectrix-d41-rgb-8gb-3000mhz-ddr4-cl16-ax4u300038g16-sb41_memoria-adata-xpg-spectrix-d41-rgb-8gb-3000mhz-ddr4-cl16-ax4u300038g16-sb41_1565358918_g.jpg)
+2020-10-22 16:07:31.489  INFO 15084 --- [http-nio-8085-exec-2] o.m.m.g.w.controller.PromocaoController  : Salvando a promocao: Promocao NewPromocaoDTO(site=kabumcombr, title=Memória XPG Spectrix D41 TUF, RGB, 8GB, 3000MHz, DDR4, CL16 - AX4U300038G16-SB41, linkPromocao=https://www.kabum.com.br/cgi-local/site/produtos/descricao_ofertas.cgi?codigo=102746, descricao=, linkImage=https://images6.kabum.com.br/produtos/fotos/102746/memoria-adata-xpg-spectrix-d41-rgb-8gb-3000mhz-ddr4-cl16-ax4u300038g16-sb41_memoria-adata-xpg-spectrix-d41-rgb-8gb-3000mhz-ddr4-cl16-ax4u300038g16-sb41_1565358918_g.jpg, categoria=2, preco=7.89)
+2020-10-22 16:17:56.484  INFO 15084 --- [RMI TCP Connection(29)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-10-22 16:17:56.487  INFO 15084 --- [RMI TCP Connection(29)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-22 16:17:56.488  INFO 15084 --- [RMI TCP Connection(29)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-10-22 16:17:56.492  INFO 15084 --- [RMI TCP Connection(29)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-10-22 16:17:56.501  INFO 15084 --- [RMI TCP Connection(29)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

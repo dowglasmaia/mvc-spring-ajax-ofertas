@@ -64,6 +64,7 @@ public class Promocao implements Serializable {
 	@Column(name = "data_cadastro")
 	private LocalDateTime dtaCadastroDateTime;
 	
+	@NotNull(message = "Uma Categoria é requirida.")
 	@ManyToOne
 	@JoinColumn(name = "categoria_fk")
 	private Categoria categoria;
