@@ -63,7 +63,7 @@ $("#form-add-promo").submit(function (evt) {
 	promo.descricao = $("#descricao").val();
 	promo.preco = $("#preco").val();
 	promo.site = $("#site").text();
-	promo.title = $("#titulo").val();
+	promo.titulo = $("#titulo").val();
 	promo.linkImage = $("#linkImagem").attr("src");
 	promo.categoria = $("#categoria").val();
 
@@ -77,8 +77,19 @@ $("#form-add-promo").submit(function (evt) {
 		beforeSend: function () {
 			/*escodendo o formulario e add class de load*/
 			$("#form-add-promo").hide();
+
+			//removendo as messagens
+			$('span').closest('.error-span').remove();
+
+			//remove as bordas vermelhas dos campos
+			$('#categoria').removeClass('is-invalid');
+			$('#titulo').removeClass('is-invalid');
+			$('#preco').removeClass('is-invalid');
+			$('#linkPromocao').removeClass('is-invalid');
+
+			//habilta o load
 			$("#loader-form").addClass("loader").show();
-			$("#alert").removeClass("alert alert-danger alert-success").text(" ");//removendo msg de error
+			//$("#alert").removeClass("alert alert-danger alert-success ").text(" ");//removendo msg de error
 		},
 		success: function () {
 			/*limpando todos os campos de entrada do formulario497*/
@@ -89,7 +100,25 @@ $("#form-add-promo").submit(function (evt) {
 			$("#linkImagem").attr("src", "/images/promo-dark.png ");
 			$("#titulo").val("");
 
-			$("#alert").addClass("alert alert-success").text("OK! Promoção cadastrada com sucesso.");
+			$("#alert")
+				.removeClass('alert alert-danger')
+				.addClass("alert alert-success")
+				.text("OK! Promoção cadastrada com sucesso.");
+		},
+		/*pegando os erros de validações dos campos e exibindo na Tela*/
+		statusCode: {
+			422: function(xhr) {
+				
+				console.log('status error: ' + xhr.status);
+				
+				var errors = $.parseJSON(xhr.responseText); 
+				$.each(errors, function (key, val) {
+					$('#' + key).addClass('is-invalid');
+					$('#error-' + key)
+							.addClass('invalid-feedback')
+							.append("<span class='error-span' >" + val + "</span>")
+				});
+			}
 		},
 		error: function (xhr) {
 			console.log("> error: ", xhr.responseText);

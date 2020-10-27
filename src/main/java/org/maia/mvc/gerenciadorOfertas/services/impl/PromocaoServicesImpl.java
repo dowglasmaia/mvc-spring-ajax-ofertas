@@ -47,7 +47,7 @@ public class PromocaoServicesImpl implements PromocaoServices {
 				.categoria(categoria)
 				.site(promocaoDTO.getSite())
 				.linkImage(promocaoDTO.getLinkImage())
-				.title(promocaoDTO.getTitle())
+				.titulo(promocaoDTO.getTitulo())
 				.linkPromocao(promocaoDTO.getLinkPromocao())
 				.descricao(promocaoDTO.getDescricao())
 				.preco(promocaoDTO.getPreco())
