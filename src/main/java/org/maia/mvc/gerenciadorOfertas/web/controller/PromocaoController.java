@@ -1,5 +1,6 @@
 package org.maia.mvc.gerenciadorOfertas.web.controller;
 
+import java.awt.print.Pageable;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -11,11 +12,14 @@ import javax.validation.Valid;
 import org.maia.mvc.gerenciadorOfertas.domain.Categoria;
 import org.maia.mvc.gerenciadorOfertas.domain.Promocao;
 import org.maia.mvc.gerenciadorOfertas.domain.dto.NewPromocaoDTO;
+import org.maia.mvc.gerenciadorOfertas.repository.PromocaoRepo;
 import org.maia.mvc.gerenciadorOfertas.services.CategoriaServices;
 import org.maia.mvc.gerenciadorOfertas.services.PromocaoServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -37,6 +41,9 @@ public class PromocaoController {
 
 	@Autowired
 	private PromocaoServices promoServices;
+	
+	@Autowired
+	private PromocaoRepo repo;
 
 	@ModelAttribute("categorias") // refenciado no template html e atualiza o combobox da pagina
 	public List<Categoria> obterCategorias() {
@@ -73,14 +80,18 @@ public class PromocaoController {
 	// ======== LISTA DE OFERTAS ==========//
 	@GetMapping("/list")
 	public String listarOfertas(ModelMap model) {
-
-		model.addAttribute("promocoes", getPromocoesOrderByDateTime());
+		
+		Sort sort = new Sort(Sort.Direction.DESC,"dtaCadastroDateTime");
+	
+		PageRequest pg = PageRequest.of(0, 8, sort ) ;
+		
+		model.addAttribute("promocoes", repo.findAll(pg));
 
 		return "promo-list";
 	}
 
 	protected List<Promocao> getPromocoesOrderByDateTime() {
-		List<Promocao> lista = promoServices.findAll()
+		List<Promocao> lista = repo.findAll()
 				.stream()
 				.sorted((l1, l2) -> l1.getDtaCadastroDateTime().compareTo(l2.getDtaCadastroDateTime()))
 				.collect(Collectors.toList());
