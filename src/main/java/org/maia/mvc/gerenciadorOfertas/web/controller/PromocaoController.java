@@ -1,7 +1,5 @@
 package org.maia.mvc.gerenciadorOfertas.web.controller;
 
-import java.awt.print.Pageable;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,6 +27,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/promocao")
@@ -89,6 +88,20 @@ public class PromocaoController {
 
 		return "promo-list";
 	}
+	
+	// ======== LISTA DE OFERTAS ==========//
+		@GetMapping("/list/ajax")
+		public String listarCards( @RequestParam(name = "page", defaultValue = "1") int page,	ModelMap model) {
+			
+			Sort sort = new Sort(Sort.Direction.DESC,"dtaCadastroDateTime");
+		
+			PageRequest pg = PageRequest.of(0, 8, sort ) ;
+			
+			model.addAttribute("promocoes", repo.findAll(pg));
+
+			return "promo-card";
+		}
+
 
 	protected List<Promocao> getPromocoesOrderByDateTime() {
 		List<Promocao> lista = repo.findAll()

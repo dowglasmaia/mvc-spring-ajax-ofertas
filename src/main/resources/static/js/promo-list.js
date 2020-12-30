@@ -1,3 +1,5 @@
+var pageNumber = 0;
+
 //====== efeito infint scroll ========
 $(window).scroll(function(){
 
@@ -9,7 +11,28 @@ $(window).scroll(function(){
     console.log("ScrollTop ->",scrollTop, '|', 'Conteudo ->', conteudo);
 
     if(scrollTop >= conteudo){
-        console.log(" * * * * * ")
+       pageNumber ++;
+
+      setTimeout(function(){
+        loadByScrollBar(pageNumber);
+      }, 200)
     }
 
 });
+
+/* realizando consultar via ajax de acordo com o numero da pagina. */
+function loadByScrollBar(pageNumber) {
+
+    $.ajax({
+        method:"GET",
+        url: "/promocao/list/ajax",
+        data: {
+            page: pageNumber
+        },        
+        success: function (response) {
+            console.log("Resposta -> ",response)
+            
+        }
+    });
+    
+}
