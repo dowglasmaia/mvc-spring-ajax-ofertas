@@ -107,16 +107,16 @@ $("#form-add-promo").submit(function (evt) {
 		},
 		/*pegando os erros de validações dos campos e exibindo na Tela*/
 		statusCode: {
-			422: function(xhr) {
-				
+			422: function (xhr) {
+
 				console.log('status error: ' + xhr.status);
-				
-				var errors = $.parseJSON(xhr.responseText); 
+
+				var errors = $.parseJSON(xhr.responseText);
 				$.each(errors, function (key, val) {
 					$('#' + key).addClass('is-invalid');
 					$('#error-' + key)
-							.addClass('invalid-feedback')
-							.append("<span class='error-span' >" + val + "</span>")
+						.addClass('invalid-feedback')
+						.append("<span class='error-span' >" + val + "</span>")
 				});
 			}
 		},
