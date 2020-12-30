@@ -1,8 +1,10 @@
 package org.maia.mvc.gerenciadorOfertas.web.controller;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
@@ -16,6 +18,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -48,7 +51,7 @@ public class PromocaoController {
 
 	@PostMapping("/save")
 	public ResponseEntity<?> salvarPromocao(@Valid NewPromocaoDTO promocaoDTO, BindingResult result) {
-		
+
 		log.info("Salvando a promocao: Promocao {}", promocaoDTO.toString());
 
 		/* pegando os erros dos campos do objeto */
@@ -65,6 +68,23 @@ public class PromocaoController {
 		promoServices.fromDTO(promocaoDTO);
 
 		return ResponseEntity.ok().build();
+	}
+
+	// ======== LISTA DE OFERTAS ==========//
+	@GetMapping("/list")
+	public String listarOfertas(ModelMap model) {
+
+		model.addAttribute("promocoes", getPromocoesOrderByDateTime());
+
+		return "promo-list";
+	}
+
+	protected List<Promocao> getPromocoesOrderByDateTime() {
+		List<Promocao> lista = promoServices.findAll()
+				.stream()
+				.sorted((l1, l2) -> l1.getDtaCadastroDateTime().compareTo(l2.getDtaCadastroDateTime()))
+				.collect(Collectors.toList());
+		return lista;
 	}
 
 }
