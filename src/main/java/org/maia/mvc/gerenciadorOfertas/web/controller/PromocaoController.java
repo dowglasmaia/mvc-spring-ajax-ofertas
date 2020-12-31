@@ -95,7 +95,7 @@ public class PromocaoController {
 			
 			Sort sort = new Sort(Sort.Direction.DESC,"dtaCadastroDateTime");
 		
-			PageRequest pg = PageRequest.of(0, 8, sort ) ;
+			PageRequest pg = PageRequest.of(page, 8, sort ) ;
 			
 			model.addAttribute("promocoes", repo.findAll(pg));
 

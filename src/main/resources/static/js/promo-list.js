@@ -1,21 +1,22 @@
 var pageNumber = 0;
 
 //====== efeito infint scroll ========
-$(window).scroll(function(){
+$(window).scroll(function () {
 
     //pegando a posição da barra de rolagem
     var scrollTop = $(this).scrollTop();
 
-    var conteudo = $(document).height() -  $(window).height();
+    var conteudo = $(document).height() - $(window).height();
 
-    console.log("ScrollTop ->",scrollTop, '|', 'Conteudo ->', conteudo);
+    // console.log("ScrollTop ->",scrollTop, '|', 'Conteudo ->', conteudo);
 
-    if(scrollTop >= conteudo){
-       pageNumber ++;
-
-      setTimeout(function(){
-        loadByScrollBar(pageNumber);
-      }, 200)
+    if (scrollTop >= conteudo) {
+        pageNumber++;
+        console.log(pageNumber);
+        
+        setTimeout(function () {
+            loadByScrollBar(pageNumber);
+        }, 200)
     }
 
 });
@@ -24,15 +25,17 @@ $(window).scroll(function(){
 function loadByScrollBar(pageNumber) {
 
     $.ajax({
-        method:"GET",
+        method: "GET",
         url: "/promocao/list/ajax",
         data: {
             page: pageNumber
-        },        
+        },
         success: function (response) {
-            console.log("Resposta -> ",response)
-            
+            // console.log("Resposta -> ",response)
+            $(".row").fadeIn(250, function () {
+                $(this).append(response);
+            });
         }
     });
-    
+
 }
