@@ -1,5 +1,11 @@
 var pageNumber = 0;
 
+//ocultando  elementos quando a pagina e carregada.
+$(document).ready(function () {
+    $("#loader-img").hide();
+    $("#fim-btn").hide();
+});
+
 //====== efeito infint scroll ========
 $(window).scroll(function () {
 
@@ -13,7 +19,7 @@ $(window).scroll(function () {
     if (scrollTop >= conteudo) {
         pageNumber++;
         console.log(pageNumber);
-        
+
         setTimeout(function () {
             loadByScrollBar(pageNumber);
         }, 200)
@@ -23,19 +29,38 @@ $(window).scroll(function () {
 
 /* realizando consultar via ajax de acordo com o numero da pagina. */
 function loadByScrollBar(pageNumber) {
-
     $.ajax({
         method: "GET",
         url: "/promocao/list/ajax",
         data: {
             page: pageNumber
         },
+
+        beforeSend: function () {
+            $("#loader-img").show();
+        },
+
         success: function (response) {
             // console.log("Resposta -> ",response)
-            $(".row").fadeIn(250, function () {
-                $(this).append(response);
-            });
-        }
+            if (response.length > 150) {
+
+                $(".row").fadeIn(250, function () {
+                    $(this).append(response);
+                });
+            } else {
+                $("#fim-btn").show();
+                $("#loader-img").removeClass("loader");
+            }
+
+        },
+        error: function (xhr) {
+            alert("Ops!, ocorreu um error: " + xhr.status + " - " + xhr.statusText);
+        },
+
+        complete: function () {
+            $("#loader-img").hide();
+        },
+
     });
 
 }
