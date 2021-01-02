@@ -62,5 +62,23 @@ function loadByScrollBar(pageNumber) {
         },
 
     });
-
 }
+
+//adicioando Likes 
+$("button[id*='likes-btn-']").on("click", function () {
+    var id = $(this).attr("id").split("-")[2];
+    console.log("o ID é > " + id)
+
+    //enviando requisição da curtida via ajax, com o valor do id do butão:
+    $.ajax({
+        method: "POST",
+        url: "/promocao/like/" + id,
+        success: function (response) {
+            $("#likes-count" + id).text(response);
+        },
+        error:function(xhr){
+            alert("Ops, ocerreu um error: " + xhr.status + ", "+xhr.statusText);
+        }
+    }); //  fim Ajax
+
+});
