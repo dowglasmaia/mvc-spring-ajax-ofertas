@@ -75,7 +75,7 @@ $(document).on("click", "button[id*='likes-btn-']", function () {
         method: "POST",
         url: "/promocao/like/" + id,
         success: function (response) {
-            $("#likes-count" + id).text(response);
+            $("#likes-count-" + id).text(response);
         },
         error: function (xhr) {
             alert("Ops, ocerreu um error: " + xhr.status + ", " + xhr.statusText);

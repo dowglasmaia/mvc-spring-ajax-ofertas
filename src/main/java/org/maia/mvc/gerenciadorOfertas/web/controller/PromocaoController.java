@@ -25,6 +25,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -40,7 +41,7 @@ public class PromocaoController {
 
 	@Autowired
 	private PromocaoServices promoServices;
-	
+
 	@Autowired
 	private PromocaoRepo repo;
 
@@ -53,6 +54,14 @@ public class PromocaoController {
 	@GetMapping("/add")
 	public String abrirCadastro() {
 		return "promo-add";
+	}
+
+	// atualiza os links e retona o total atualizado
+	@PostMapping("/like/{id}")
+	public ResponseEntity<?> adicionarLikes(@PathVariable("id") Long id) {
+		repo.updateSomaLike(id);
+		int likes = repo.findLinkesById(id);
+		return ResponseEntity.ok(likes);
 	}
 
 	@PostMapping("/save")
@@ -79,33 +88,31 @@ public class PromocaoController {
 	// ======== LISTA DE OFERTAS ==========//
 	@GetMapping("/list")
 	public String listarOfertas(ModelMap model) {
-		
-		Sort sort = new Sort(Sort.Direction.DESC,"dtaCadastroDateTime");
-	
-		PageRequest pg = PageRequest.of(0, 8, sort ) ;
-		
+
+		Sort sort = new Sort(Sort.Direction.DESC, "dtaCadastroDateTime");
+
+		PageRequest pg = PageRequest.of(0, 8, sort);
+
 		model.addAttribute("promocoes", repo.findAll(pg));
 
 		return "promo-list";
 	}
-	
+
 	// ======== LISTA DE OFERTAS ==========//
-		@GetMapping("/list/ajax")
-		public String listarCards( @RequestParam(name = "page", defaultValue = "1") int page,	ModelMap model) {
-			
-			Sort sort = new Sort(Sort.Direction.DESC,"dtaCadastroDateTime");
-		
-			PageRequest pg = PageRequest.of(page, 8, sort ) ;
-			
-			model.addAttribute("promocoes", repo.findAll(pg));
+	@GetMapping("/list/ajax")
+	public String listarCards(@RequestParam(name = "page", defaultValue = "1") int page, ModelMap model) {
 
-			return "promo-card";
-		}
+		Sort sort = new Sort(Sort.Direction.DESC, "dtaCadastroDateTime");
 
+		PageRequest pg = PageRequest.of(page, 8, sort);
+
+		model.addAttribute("promocoes", repo.findAll(pg));
+
+		return "promo-card";
+	}
 
 	protected List<Promocao> getPromocoesOrderByDateTime() {
-		List<Promocao> lista = repo.findAll()
-				.stream()
+		List<Promocao> lista = repo.findAll().stream()
 				.sorted((l1, l2) -> l1.getDtaCadastroDateTime().compareTo(l2.getDtaCadastroDateTime()))
 				.collect(Collectors.toList());
 		return lista;
