@@ -65,7 +65,8 @@ function loadByScrollBar(pageNumber) {
 }
 
 //adicioando Likes 
-$("button[id*='likes-btn-']").on("click", function () {
+//$("button[id*='likes-btn-']").on("click", function () {
+$(document).on("click", "button[id*='likes-btn-']", function () {
     var id = $(this).attr("id").split("-")[2];
     console.log("o ID é > " + id)
 
@@ -76,8 +77,8 @@ $("button[id*='likes-btn-']").on("click", function () {
         success: function (response) {
             $("#likes-count" + id).text(response);
         },
-        error:function(xhr){
-            alert("Ops, ocerreu um error: " + xhr.status + ", "+xhr.statusText);
+        error: function (xhr) {
+            alert("Ops, ocerreu um error: " + xhr.status + ", " + xhr.statusText);
         }
     }); //  fim Ajax
 

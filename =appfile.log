@@ -52,3 +52,7 @@
 2021-01-02 12:12:35.269  INFO 14436 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
 2021-01-02 12:12:35.270  INFO 14436 --- [restartedMain] o.m.m.g.MvcSpringAjaxApplication         : Started MvcSpringAjaxApplication in 0.96 seconds (JVM running for 1642.166)
 2021-01-02 12:12:35.274  INFO 14436 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-01-02 12:40:17.564  INFO 14436 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-02 12:40:17.566  INFO 14436 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-02 12:40:17.573  INFO 14436 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2021-01-02 12:40:17.582  INFO 14436 --- [http-nio-8085-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
