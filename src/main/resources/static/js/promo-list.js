@@ -88,12 +88,12 @@ $("#autocomplete-input").autocomplete({
     source: function (request, response) {
         $.ajax({
             method: "GET",
-            url: "/promocao/list",
+            url: "/promocao/site",
             data: {
                 termo: request.term
             },
             success: function (result) {
-                response.result;
+               response(result);
             }
         });
     }

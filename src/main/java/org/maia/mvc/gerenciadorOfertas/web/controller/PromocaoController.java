@@ -85,6 +85,14 @@ public class PromocaoController {
 		return ResponseEntity.ok().build();
 	}
 
+	// ======== AUTOCOMPLETE ==========//
+	@GetMapping("/site")
+	public ResponseEntity<?> autoCompleteByTermo(@RequestParam("termo") String termo) {
+		List<String> sites = repo.findSitesByTermo(termo);
+
+		return ResponseEntity.ok(sites);
+	}
+
 	// ======== LISTA DE OFERTAS ==========//
 	@GetMapping("/list")
 	public String listarOfertas(ModelMap model) {

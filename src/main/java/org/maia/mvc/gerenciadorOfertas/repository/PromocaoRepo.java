@@ -1,5 +1,7 @@
 package org.maia.mvc.gerenciadorOfertas.repository;
 
+import java.util.List;
+
 import org.maia.mvc.gerenciadorOfertas.domain.Promocao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -11,6 +13,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 public interface PromocaoRepo extends JpaRepository<Promocao, Long> {
 	
+	
+	@Query("select distinct p.site from Promocao p where p.site like %:site%")
+	List<String>findSitesByTermo(@Param("site") String site);
 	
 	@Transactional(readOnly = false) // modificando a transação para poder realizar o update
 	@Modifying
