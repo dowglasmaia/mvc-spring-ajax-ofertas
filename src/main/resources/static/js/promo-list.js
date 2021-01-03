@@ -29,11 +29,13 @@ $(window).scroll(function () {
 
 /* realizando consultar via ajax de acordo com o numero da pagina. */
 function loadByScrollBar(pageNumber) {
+    var site = $("#autocomplete-input").val();
     $.ajax({
         method: "GET",
         url: "/promocao/list/ajax",
         data: {
-            page: pageNumber
+            page: pageNumber,
+            site:site,
         },
 
         beforeSend: function () {
@@ -129,19 +131,5 @@ $("#autocomplete-submit").click(function () {
 
 });
 
-/*
-$("#autocomplete-submit").click(function () {
-    var site = $("#autocomplete-input").val();
-    console.log("o Site é:> " + site);
 
-    $.ajax({
-        method: "POST",
-        url: "/promocao/site/" + site,
-
-        success: function () {
-
-        }
-    });
-});
-*/
 

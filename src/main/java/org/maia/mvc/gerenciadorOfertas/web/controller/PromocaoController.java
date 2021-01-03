@@ -92,31 +92,24 @@ public class PromocaoController {
 
 		return ResponseEntity.ok(sites);
 	}
-	
 
 	// ======== LISTA DE OFERTAS ==========//
-	
-	/* Retoena as Provoções por nome do Site, e Monta os Novos Cards para a Tela*/
+
+	/* Retoena as Provoções por nome do Site, e Monta os Novos Cards para a Tela */
 	@GetMapping("/site/list")
 	public String lstarPorSite(@RequestParam("site") String site, ModelMap model) {
-		System.out.println("Nome do Site "+ site);
-		
+		System.out.println("Nome do Site " + site);
+
 		Sort sort = new Sort(Sort.Direction.DESC, "dtaCadastroDateTime");
-
 		PageRequest pageRequest = PageRequest.of(0, 8, sort);
-
-		model.addAttribute("promocoes", repo.findBySite(site,pageRequest));
-
+		model.addAttribute("promocoes", repo.findBySite(site, pageRequest));
 		return "promo-card";
 	}
 
 	@GetMapping("/list")
 	public String listarOfertas(ModelMap model) {
-
 		Sort sort = new Sort(Sort.Direction.DESC, "dtaCadastroDateTime");
-
 		PageRequest pg = PageRequest.of(0, 8, sort);
-
 		model.addAttribute("promocoes", repo.findAll(pg));
 
 		return "promo-list";
@@ -124,13 +117,17 @@ public class PromocaoController {
 
 	// ======== LISTA DE OFERTAS ==========//
 	@GetMapping("/list/ajax")
-	public String listarCards(@RequestParam(name = "page", defaultValue = "1") int page, ModelMap model) {
+	public String listarCardsComPaginacao(@RequestParam(name = "page", defaultValue = "1") int page,
+			@RequestParam(name = "site", defaultValue = "") String site, ModelMap model) {
 
 		Sort sort = new Sort(Sort.Direction.DESC, "dtaCadastroDateTime");
+		PageRequest pageRequest = PageRequest.of(page, 8, sort);
 
-		PageRequest pg = PageRequest.of(page, 8, sort);
-
-		model.addAttribute("promocoes", repo.findAll(pg));
+		if (site.isEmpty()) {
+			model.addAttribute("promocoes", repo.findAll(pageRequest));
+		} else {
+			model.addAttribute("promocoes", repo.findBySite(site, pageRequest));
+		}
 
 		return "promo-card";
 	}
