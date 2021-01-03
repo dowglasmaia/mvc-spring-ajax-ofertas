@@ -9,9 +9,12 @@ mvc-spring-ajax-ofertas
 * https://www.w3schools.com/jquery/ajax_ajax.asp
 * https://api.jquery.com/scrollTop/
 * https://api.jquery.com/scroll/
+* https://jqueryui.com/autocomplete/
+
 
 * https://www.logicbig.com/tutorials/spring-framework/spring-web-mvc/spring-model-attribute-method.html
 * https://www.baeldung.com/spring-mvc-and-the-modelattribute-annotation
+
 
 ## #
 Regras de Validação

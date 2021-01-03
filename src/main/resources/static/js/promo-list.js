@@ -81,5 +81,21 @@ $(document).on("click", "button[id*='likes-btn-']", function () {
             alert("Ops, ocerreu um error: " + xhr.status + ", " + xhr.statusText);
         }
     }); //  fim Ajax
-
 });
+
+//Autocomplete do Jquery,  retornando os valoes da consulta na base de dados,  com base no que for digitado no campo input.
+$("#autocomplete-input").autocomplete({
+    source: function (request, response) {
+        $.ajax({
+            method: "GET",
+            url: "/promocao/list",
+            data: {
+                termo: request.term
+            },
+            success: function (result) {
+                response.result;
+            }
+        });
+    }
+})
+
