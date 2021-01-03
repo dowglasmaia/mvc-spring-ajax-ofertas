@@ -92,8 +92,24 @@ public class PromocaoController {
 
 		return ResponseEntity.ok(sites);
 	}
+	
 
 	// ======== LISTA DE OFERTAS ==========//
+	
+	/* Retoena as Provoções por nome do Site, e Monta os Novos Cards para a Tela*/
+	@GetMapping("/site/list")
+	public String lstarPorSite(@RequestParam("site") String site, ModelMap model) {
+		System.out.println("Nome do Site "+ site);
+		
+		Sort sort = new Sort(Sort.Direction.DESC, "dtaCadastroDateTime");
+
+		PageRequest pageRequest = PageRequest.of(0, 8, sort);
+
+		model.addAttribute("promocoes", repo.findBySite(site,pageRequest));
+
+		return "promo-card";
+	}
+
 	@GetMapping("/list")
 	public String listarOfertas(ModelMap model) {
 

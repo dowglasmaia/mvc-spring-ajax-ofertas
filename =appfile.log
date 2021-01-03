@@ -1780,3 +1780,72 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 2021-01-03 11:34:36.129  INFO 11836 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2021-01-03 11:34:36.130  INFO 11836 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2021-01-03 11:34:36.139  INFO 11836 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2021-01-03 12:04:26.999  INFO 11836 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-03 12:04:27.000  INFO 11836 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-01-03 12:04:27.004  INFO 11836 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-01-03 12:04:27.021  INFO 11836 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-01-03 12:04:27.270  INFO 11836 --- [restartedMain] o.m.m.g.MvcSpringAjaxApplication         : Starting MvcSpringAjaxApplication on DESKTOP-DCD5LMF with PID 11836 (E:\dev_maia\workspace_java\mvc-spring-ajax-ofertas\target\classes started by dowgl in E:\dev_maia\workspace_java\mvc-spring-ajax-ofertas)
+2021-01-03 12:04:27.270  INFO 11836 --- [restartedMain] o.m.m.g.MvcSpringAjaxApplication         : The following profiles are active: dev
+2021-01-03 12:04:27.562  INFO 11836 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-01-03 12:04:27.581  INFO 11836 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 2 JPA repository interfaces.
+2021-01-03 12:04:27.717  INFO 11836 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2021-01-03 12:04:27.719  INFO 11836 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-03 12:04:27.719  INFO 11836 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-01-03 12:04:27.752  INFO 11836 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-03 12:04:27.752  INFO 11836 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 480 ms
+2021-01-03 12:04:27.801  INFO 11836 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-01-03 12:04:27.819  INFO 11836 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-01-03 12:04:27.824  INFO 11836 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-01-03 12:04:27.838  INFO 11836 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-01-03 12:04:27.893  INFO 11836 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-01-03 12:04:27.939  INFO 11836 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2021-01-03 12:04:28.026  INFO 11836 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-03 12:04:28.120  INFO 11836 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-01-03 12:04:28.141  INFO 11836 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2021-01-03 12:04:28.142  INFO 11836 --- [restartedMain] o.m.m.g.MvcSpringAjaxApplication         : Started MvcSpringAjaxApplication in 0.907 seconds (JVM running for 1826.805)
+2021-01-03 12:04:28.144  INFO 11836 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-01-03 12:04:36.285  INFO 11836 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-03 12:04:36.285  INFO 11836 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-03 12:04:36.290  INFO 11836 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2021-01-03 12:04:56.244  WARN 11836 --- [http-nio-8085-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2021-01-03 12:05:08.170  INFO 11836 --- [RMI TCP Connection(42)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-01-03 12:05:08.173  INFO 11836 --- [RMI TCP Connection(42)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-03 12:05:08.174  INFO 11836 --- [RMI TCP Connection(42)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-01-03 12:05:08.175  INFO 11836 --- [RMI TCP Connection(42)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2021-01-03 12:05:08.190  INFO 11836 --- [RMI TCP Connection(42)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2021-01-03 12:05:28.528  INFO 19180 --- [restartedMain] o.m.m.g.MvcSpringAjaxApplication         : Starting MvcSpringAjaxApplication on DESKTOP-DCD5LMF with PID 19180 (E:\dev_maia\workspace_java\mvc-spring-ajax-ofertas\target\classes started by dowgl in E:\dev_maia\workspace_java\mvc-spring-ajax-ofertas)
+2021-01-03 12:05:28.533  INFO 19180 --- [restartedMain] o.m.m.g.MvcSpringAjaxApplication         : The following profiles are active: dev
+2021-01-03 12:05:28.729  INFO 19180 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-01-03 12:05:28.729  INFO 19180 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-01-03 12:05:29.478  INFO 19180 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-01-03 12:05:29.553  INFO 19180 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 69ms. Found 2 JPA repository interfaces.
+2021-01-03 12:05:30.252  INFO 19180 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2021-01-03 12:05:30.284  INFO 19180 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-03 12:05:30.285  INFO 19180 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-01-03 12:05:30.419  INFO 19180 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-03 12:05:30.419  INFO 19180 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1690 ms
+2021-01-03 12:05:30.563  INFO 19180 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-03 12:05:30.859  INFO 19180 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-03 12:05:30.907  INFO 19180 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-01-03 12:05:30.983  INFO 19180 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.17.Final}
+2021-01-03 12:05:30.985  INFO 19180 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2021-01-03 12:05:31.130  INFO 19180 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-01-03 12:05:31.255  INFO 19180 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-01-03 12:05:31.910  INFO 19180 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-01-03 12:05:32.161  INFO 19180 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2021-01-03 12:05:32.433  INFO 19180 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-03 12:05:32.909  INFO 19180 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-01-03 12:05:32.966  INFO 19180 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2021-01-03 12:05:32.969  INFO 19180 --- [restartedMain] o.m.m.g.MvcSpringAjaxApplication         : Started MvcSpringAjaxApplication in 4.774 seconds (JVM running for 5.991)
+2021-01-03 12:05:41.682  INFO 19180 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-03 12:05:41.683  INFO 19180 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-03 12:05:41.694  INFO 19180 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2021-01-03 12:27:28.161  INFO 19180 --- [RMI TCP Connection(30)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-01-03 12:27:28.168  INFO 19180 --- [RMI TCP Connection(30)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-03 12:27:28.170  INFO 19180 --- [RMI TCP Connection(30)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-01-03 12:27:28.177  INFO 19180 --- [RMI TCP Connection(30)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-01-03 12:27:28.203  INFO 19180 --- [RMI TCP Connection(30)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
