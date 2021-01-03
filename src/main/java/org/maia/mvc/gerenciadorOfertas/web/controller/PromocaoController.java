@@ -99,11 +99,15 @@ public class PromocaoController {
 	@GetMapping("/site/list")
 	public String lstarPorSite(@RequestParam("site") String site, ModelMap model) {
 		System.out.println("Nome do Site " + site);
-
-		Sort sort = new Sort(Sort.Direction.DESC, "dtaCadastroDateTime");
-		PageRequest pageRequest = PageRequest.of(0, 8, sort);
-		model.addAttribute("promocoes", repo.findBySite(site, pageRequest));
-		return "promo-card";
+		if (!site.isEmpty()) {
+			Sort sort = new Sort(Sort.Direction.DESC, "dtaCadastroDateTime");
+			PageRequest pageRequest = PageRequest.of(0, 8, sort);
+			model.addAttribute("promocoes", repo.findBySite(site, pageRequest));
+			return "promo-card";
+		}else {
+			
+			throw new RuntimeException("Nenhum Site foi Informado para a realizar a consulta.");
+		}
 	}
 
 	@GetMapping("/list")

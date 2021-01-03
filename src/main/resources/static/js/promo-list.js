@@ -35,7 +35,7 @@ function loadByScrollBar(pageNumber) {
         url: "/promocao/list/ajax",
         data: {
             page: pageNumber,
-            site:site,
+            site: site,
         },
 
         beforeSend: function () {
@@ -104,31 +104,33 @@ $("#autocomplete-input").autocomplete({
 //listar promoções pelo nome do site, removndo os cards da pagina antes de preencher com os novos, con efitos de entrada e saida
 $("#autocomplete-submit").click(function () {
     var site = $("#autocomplete-input").val();
-    $.ajax({
-        method: "GET",
-        url: "/promocao/site/list",
-        data: {
-            site: site, // parametro no corpo da requisição
-        },
+    console.log(site)
+    
+        $.ajax({
+            method: "GET",
+            url: "/promocao/site/list",
+            data: {
+                site: site, // parametro no corpo da requisição
+            },
 
-        beforeSend: function () {
-            pageNumber = 0,
-            $("#fim-btn").hide();
-            $(".row").fadeOut(400, function () {
-                $(this).empty(); // remove os cardes da tela
-            });
-        },
+            beforeSend: function () {
+                pageNumber = 0,
+                    $("#fim-btn").hide();
+                $(".row").fadeOut(400, function () {
+                    $(this).empty(); // remove os cardes da tela
+                });
+            },
 
-        success: function (response) {
-            $(".row").fadeIn(250, function () {
-                $(this).append(response); // preenche a tela com o novos cards com valores da resposta do servidor.
-            });
-        },
-        error: function(xhr){
-            alert("Ops, Algo deu errado: "+ xhr.status + ", "+ xhr.statusText);
-        }
-    });
-
+            success: function (response) {
+                $(".row").fadeIn(250, function () {
+                    $(this).append(response); // preenche a tela com o novos cards com valores da resposta do servidor.
+                });
+            },
+            error: function (xhr) {
+                alert("Ops, Algo deu errado: " + xhr.status + ", " + xhr.responseJSON.message);
+            }
+        });
+    
 });
 
 
