@@ -11,12 +11,13 @@ mvc-spring-ajax-ofertas
 * https://api.jquery.com/scroll/
 * https://jqueryui.com/autocomplete/
 
+#####  Tabelas  | https://www.datatables.net/
 
 * https://www.logicbig.com/tutorials/spring-framework/spring-web-mvc/spring-model-attribute-method.html
 * https://www.baeldung.com/spring-mvc-and-the-modelattribute-annotation
 
 
-## #
+## 
 Regras de Validação
 Para criar as regras de validação back-end do formulário de cadastro de promoções vamos trabalhar com a especificação Bean Validation. Este recurso usa anotações sobre os atributos da classe e cada anotação tem um objetivo especifico dentro da validação, vejamos algumas dessas regras:
 
