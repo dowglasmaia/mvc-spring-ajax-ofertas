@@ -1,4 +1,6 @@
-mvc-spring-ajax-ofertas
+[![Build Status](https://travis-ci.com/dowglasmaia/mvc-spring-ajax-ofertas.svg?branch=master)](https://travis-ci.com/github/dowglasmaia/mvc-spring-ajax-ofertas)
+
+## Sistema para coleta de dados de produtos de e-commerce via meta-tags.
 
 * https://cards-dev.twitter.com/validator
 * https://developer.twitter.com/en
