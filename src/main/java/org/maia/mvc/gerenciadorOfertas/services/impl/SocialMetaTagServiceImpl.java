@@ -36,13 +36,16 @@ public class SocialMetaTagServiceImpl implements SocialMetaTagServices{
 	
 		
 	//recuperando os dados ta meta tag da pagina html com openGraph	
-	private SocialMetaTag getOpenGraphByUrl(String url) {		
+	private SocialMetaTag getOpenGraphByUrl(String url) {	
+		
+		log.info("Iniciando getOpenGraphByUrl para a url >" + url);
+		
 		SocialMetaTag tag = new SocialMetaTag();		
 		try {
 			Document document = Jsoup.connect(url).get(); 		//recuperando os dados ta meta tag da pagina html  ex: https://www.udemy.com/course/dax-e-pbi/
 			
 			tag.setTitle(document.head().select("meta[property=og:title]").attr("content") ); //<meta property="og:title" content="Power BI &amp; DAX Avançado - Guia Completo para Análises Reais">
-			tag.setSite(document.head().select("meta[property=og:]").attr("content") ); //<meta property="og:site_name" content="Udemy">
+			tag.setSite(document.head().select("meta[property=og:site_name]").attr("content") ); //<meta property="og:site_name" content="Udemy">
 			tag.setImage(document.head().select("meta[property=og:image]").attr("content") ); //<meta property="og:image" content="https://img-b.udemycdn.com/course/480x270/1491672_846d_10.jpg?secure=0oQrfvUUfzwvuyOR16s5tA%3D%3D%2C1602954423">
 			tag.setUrl(document.head().select("meta[property=og:url]").attr("content") ); //<meta property="og:url" content="https://www.udemy.com/course/dax-e-pbi/">
 		} catch (IOException e) {			
@@ -55,14 +58,19 @@ public class SocialMetaTagServiceImpl implements SocialMetaTagServices{
 	
 	//recuperando os dados ta meta tag da pagina html com TwitterCard
 	private SocialMetaTag getTwitterCardByUrl(String url) {		
+		log.info("Iniciando getTwitterCardByUrl para a url >" + url);
 		SocialMetaTag tag = new SocialMetaTag();		
+		
 		try {
 			Document document = Jsoup.connect(url).get(); 		//recuperando os dados ta meta tag da pagina html  ex: https://www.udemy.com/course/dax-e-pbi/
-			
+							
 			tag.setTitle(document.head().select("meta[name=twitter:title]").attr("content") ); //<meta property="twitter:title" content="Power BI &amp; DAX Avançado - Guia Completo para Análises Reais">
 			tag.setSite(document.head().select("meta[name=twitter:site]").attr("content") ); //<meta property="twitter:site_name" content="Udemy">
 			tag.setImage(document.head().select("meta[name=twitter:image]").attr("content") ); //<meta property="twitter:image" content="https://img-b.udemycdn.com/course/480x270/1491672_846d_10.jpg?secure=0oQrfvUUfzwvuyOR16s5tA%3D%3D%2C1602954423">
 			tag.setUrl(document.head().select("meta[name=twitter:url]").attr("content") ); //<meta property="twitter:url" content="https://www.udemy.com/course/dax-e-pbi/">
+			
+			log.info("tag >" + tag);
+		
 		} catch (IOException e) {			
 			//e.printStackTrace();
 			log.error(e.getMessage(), e.getCause());
@@ -71,7 +79,10 @@ public class SocialMetaTagServiceImpl implements SocialMetaTagServices{
 	}
 	
 	//recuperando os dados ta meta tag da pagina html com itemprop
-	private SocialMetaTag getItempropByUrl(String url) {			
+	private SocialMetaTag getItempropByUrl(String url) {	
+		
+		log.info("Iniciando getItempropByUrl para a url >" + url);
+		
 			SocialMetaTag tag = new SocialMetaTag();			
 			try {
 				Document document = Jsoup.connect(url).get(); 		
@@ -89,8 +100,7 @@ public class SocialMetaTagServiceImpl implements SocialMetaTagServices{
 		
 		private boolean isEmpty(SocialMetaTag tag) {			
 			 if (tag.getImage().isEmpty() ) return true;
-			 if (tag.getTitle().isEmpty() ) return true;
-			 if (tag.getUrl().isEmpty() ) return true;
+			 if (tag.getTitle().isEmpty() ) return true;			
 			 if (tag.getSite().isEmpty() ) return true;			
 			return false;
 		}
