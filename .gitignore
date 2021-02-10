@@ -34,3 +34,4 @@ build/
 
 ### CONF MAIA ###
 appfile.log
+docker/
