@@ -33,3 +33,5 @@ Para criar as regras de validação back-end do formulário de cadastro de promo
 
 * https://beanvalidation.org/2.0/
 
+## Rodar docker compose e criar as imagens:  docker-compose up --build --force-recreate
+
