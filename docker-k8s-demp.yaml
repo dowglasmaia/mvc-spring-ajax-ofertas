@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docker-k8s-appofertas-deployment
+  labels:
+    app:  docker-k8s-appofertas
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: docker-k8s-appofertas
+  template:
+    metadata:
+      labels:
+        app: docker-k8s-appofertas
+    spec:
+      containers:
+      - name: docker-k8s-appofertas
+        image: dowglasmaia/appofertas
+        ports:
+        - containerPort: 8081
+      

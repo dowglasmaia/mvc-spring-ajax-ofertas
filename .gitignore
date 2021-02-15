@@ -33,5 +33,5 @@ build/
 .vscode/
 
 ### CONF MAIA ###
-appfile.log
+log/
 docker/
